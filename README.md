@@ -13,7 +13,7 @@ An Express-based API that fetches and updates staking data from the Ethereum blo
 
 1. Clone this repository:
    ```sh
-   git clone https://github.com/americanolabs/backend.git
+   git clone https://github.com/optifi-edu/backend.git
    cd backend
    ```
 2. Install dependencies:
@@ -59,6 +59,11 @@ GET /staking/address/:address
 ```http
 POST /staking/update
 ```
+
+#### 🪙 Get token data
+````http
+GET /token
+````
 
 ## 🛠️ Technologies Used
 - 🖥️ **Express.js** - Web framework
