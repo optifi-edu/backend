@@ -52,7 +52,7 @@ GET /staking/protocol/:idProtocol
 
 #### 🔎 Get staking data by staking address
 ```http
-GET /staking/address/:address
+GET /staking/address/:addressStaking
 ```
 
 #### 🔄 Update staking data
