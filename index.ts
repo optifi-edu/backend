@@ -165,6 +165,24 @@ app.get("/staking/protocol/:idProtocol", async (req: Request, res: Response) => 
   }
 });
 
+app.get("/staking/address/:addressStaking", async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { addressStaking } = req.params;
+    const data = await prisma.staking.findMany({
+      where: { addressStaking: addressStaking },
+    });
+
+    if (!data || data.length === 0) {
+      res.status(404).json({ error: "Staking data not found" });
+      return;
+    }
+
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch staking data" });
+  }
+});
+
 app.get("/token", async (req: Request, res: Response) => {
   try {
     res.json(MOCK_TOKEN_DATA);
